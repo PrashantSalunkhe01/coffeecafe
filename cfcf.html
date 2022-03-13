@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coffee Cafe</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<style>
+		*{
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		#navigation{
+			background-image: url('cfi/nbg.jpg');
+			background-size: cover;
+			background-position: center;
+			height: 500px;
+			position: relative;
+			box-sizing: border-box;
+		}
+
+        .nav ul{
+        	list-style-type: none;
+        	margin: 0;
+        	padding: 0;
+        	overflow: hidden;
+        }
+
+        .nav ul li{
+        	float: left;
+        }
+
+        .nav ul li a{
+        	color: #fff;
+        	display: block;
+        	padding: 33px 18px;
+        	text-align: center;
+        	text-decoration: none;
+        }
+
+        .nav ul li a:hover{
+        	background-color:  #e67300;
+        }
+
+        .nav_head{
+        	color: #fff;
+        	text-align: center;
+        	position: absolute;
+        	top: 50%;
+        	left: 50%;
+        	transform: translate(-50%,-50%);
+        }
+
+        .nav_head h1,p{
+            text-shadow: 8px 8px 10px #000000;
+        	font-size: monospace;
+        }
+        
+        .btn{
+            background-color: #e67300;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            padding: 20px 35px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .clear{
+        	clear: both;
+        }
+
+        .m_content h1:first-child{
+            font-family: 'Cherish', cursive;
+            font-size: 30px;
+            margin: 30px auto 0;
+            width: 150px;
+        }
+
+        .content{
+        	width: 50%;
+           	float: left;
+            align-items: center;
+            box-sizing: border-box;
+           
+        }
+
+        .content video{
+            width:70%;
+            height:auto;
+        	margin: 55px;
+            border: 2px solid black;
+        	border-radius: 50px;
+        }
+
+        .text{
+            padding: 70px 50px;
+        }
+
+        .text h1, p, h4, p{
+            text-shadow: none;
+        }
+
+        .text p:first-child, h4{
+             color: #e67300;"
+        }
+
+        .m_content::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+
+         .cf_menu{
+            width: 100%;
+            /*height: 400px;*/
+            float: left;
+            margin: 30px 0;
+            align-items: center;
+            box-sizing: border-box;
+            background-image: url('cfi/cfbg3.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        
+        .m_head{
+        	width: 100%;
+        	float: left;
+        	color: #fff;
+        	text-align: center;
+        	padding: 20px 0;
+        	margin-bottom: 10px;		
+        	font-size: 30px;
+        }
+
+        .m_head h1{
+            font-family: 'Caramel', cursive;
+        }
+
+        .m_head hr{
+        	width: 820px;
+        	margin: auto;
+        	height: 2px;
+            color: #e67300;
+        	background-color:  #e67300;
+        }
+
+        .m_menu{
+        	color: #fff;
+        	margin: 22px;
+        	border: 1px solid #e67300;
+        	width: 30%;
+        	float: left;
+        }
+
+        .m_menu h4, p{
+        	padding: 5px 15px;
+        }
+
+
+        /*section gallery start*/
+
+
+        .gallery h1{
+            font-size: 25px;
+            font-weight: bolder;
+            font-style: italic;
+            text-align: center;
+            margin: 25px auto;
+            text-decoration: underline  #e67300;
+        }
+
+        .cards{
+            width: 25%;
+            float: left;
+            margin: 10px 55px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 6px 20px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.7)
+        }
+
+        .cards img{
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            height: 250px;
+        }
+
+        .c_text{
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .gallery::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /*section gallery closed*/
+
+        /*Section Review start */
+
+        .review{
+            margin-top: 30px;
+            padding: 10px 0 40px;
+            background-image: url('cfi/rbg.jpg'); 
+            background-size: cover;
+        }
+
+        .review h1{
+            color: #fff;
+            text-align: center;
+            font-style: italic;
+            font-weight: bolder;
+            text-decoration: underline;
+            padding-bottom: 25px;
+        }
+
+       .side {
+           float: left;
+           width: 15%;
+           color: #fff;
+           margin-top:10px;
+           text-align: center;
+           font-weight: bolder;
+        }
+
+        .middle {
+          margin-top:10px;
+          float: left;
+          width: 70%;
+        }
+
+        /* Place text to the right */
+        .right {
+            color: #fff;
+          text-align: center;
+          font-weight: bolder;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        /* The bar container */
+        .bar-container {
+          width: 100%;
+          /*background-color: #f1f1f1;*/
+          text-align: center;
+          color: white;
+        }
+
+        /* Individual bars */
+        .bar-5 {width: 60%; height: 18px; background-color: #04AA6D; transition-delay: 0.5s;}
+        .bar-4 {width: 40%; height: 18px; background-color: #2196F3; transition-delay: 0.5s;}
+        .bar-3 {width: 15%; height: 18px; background-color: #00bcd4; transition-delay: 0.5s;}
+        .bar-2 {width: 8%; height: 18px; background-color: #ff9800; transition-delay: 0.5s;}
+        .bar-1 {width: 20%; height: 18px; background-color: #f44336; transition-delay: 0.5s;}
+
+        /*Individual bars animation*/
+        .bar-5:hover{width: 90%;}
+        .bar-4:hover{width: 60%;}
+        .bar-3:hover{width: 30%;}
+        .bar-2:hover{width: 20%;}
+        .bar-1:hover{width: 40%;}
+
+
+        /*Section Review closed*/
+
+        /*Section footer start*/
+
+        .footer{
+            margin:40px 0; 
+            height: auto;
+            background-color: #000;
+            /*background-image: url('cfi/fbg.jpg');*/
+        }
+
+        .f_c{
+            width: 50%;
+            float: left;
+        }
+
+        .f_c p{
+            color: #fff;
+            text-align: center;
+            font-size: 25px;
+            margin:20px 0;
+            text-decoration: underline;
+        }
+
+        .f_l{
+            width: 50%;
+            padding: 10px 25px;
+            display: inline-block;
+        }
+
+        .f_l ul{
+            margin-top: auto;
+            list-style-type: none; text-align: center;
+        }
+
+        .f_l li{
+            float: left;
+            margin:10px;
+        }
+
+        /*section footer closed*/
+
+
+	</style>
+</head>
+<body>
+
+	<section class="navigation" id="navigation">
+		<div class="nav">
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">ABOUT US</a></li>
+				<li><a href="#">PRODUCT</a></li>
+				<li><a href="#">CONTACT</a></li>
+			    <li style="float: right;"><a href="#">GALLERY</a></li>
+			</ul>
+		</div>
+		<div class="nav_head">
+			<h1 style="font-size: 50px;">I Am Prashant</h1>
+			<p style="font-size: 30px;">And I'm Artist</p>
+			<a href="#" class="btn">Visit Us</a>
+		</div>
+	</section>
+
+	<section class="m_content" id="m_content">
+        <h1>About Us</h1>
+		<div class="content">
+			<a target="_self" href="cfi/cfv.mp4">
+				<video  autoplay>
+				  <source src="cfi/cfv.mp4" type="video/mp4">
+				  <source src="cfi/cfv.ogg" type="video/ogg">
+				</video>
+			</a>
+		</div>
+		<div class="content">
+			<div class="text">
+				<p style="margin-left: -15px; font-size: 20px;">Live Coffe Making Process</p>
+				<h1 style="font-size: 30px; font-weight: bold; padding: 10px 0; font-family: anton;">We Telecast our, Coffee Making Live</h1>
+				<h4 style="font-size: 20px;">We are here to listen from you deliver exellence</h4>
+				<p style="padding: 10px 0;font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br> eiusmod temp or incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim.</p>
+			</pre>
+		</div>
+	</section>
+
+	<section class="cf_menu" id="cf_menu">
+		<div class="m_head">
+			<h1>What kind of Coffee we serve for you</h1><hr>
+		</div>
+		<!-- <div class="clear"></div> -->
+		<div class="M_gallery">
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Cappuccino &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300;">$40</span> </h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Black Coffee &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span></h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Decaf &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span> </h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Expresso &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span></h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Latte &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span> </h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Americano &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span></h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Macchiato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span> </h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Flat White &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span></h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+
+
+			<div class="m_menu">
+				<h4 style="font-size: 20px;">Red Eye &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #e67300; font-size: 18px;">$40</span></h4>
+				<p>Usage of the Internet is becoming more common due to rapid advance.</p>
+			</div>
+		</div>
+	</section>
+
+    <section class="gallery" id="gallery">
+        <h1>Product</h1>
+        <div class="cards">
+            <a target="_top" href="cfi/Acf.jpeg"><img src="cfi/Acf.jpeg"  alt="Americano"></a>
+            <div class="c_text">Americano</div>
+        </div>
+        <div class="cards">
+            <a target="_top" href="cfi/Ecf.jpg"><img src="cfi/Ecf.jpg" alt="Expresso"></a>
+            <div class="c_text">Expresso</div>
+        </div>
+        <div class="cards">
+            <a target="_top" href="cfi/Mcf.jpg"><img src="cfi/Mcf.jpg" alt="Macchito"></a>
+            <div class="c_text">Macchito</div>
+        </div>
+        <div class="cards">
+            <a target="_top" href="cfi/Dcf.jpg"><img src="cfi/Dcf.jpg" alt="Decaf"></a>
+            <div class="c_text">Decaf</div>
+        </div>
+         <div class="cards">
+            <a target="_top" href="cfi/Bcfg.jpg"><img src="cfi/Bcf.jpg" alt="black Coffee"></a>
+            <div class="c_text">Black Coffee</div>
+        </div>
+         <div class="cards">
+            <a target="_top" href="cfi/FWcf.jpg"><img src="cfi/FWcf.jpg" alt="flat White"></a>
+            <div class="c_text">Flat White</div>
+        </div>
+    </section>
+
+
+    <!-- Section review start -->
+
+    <section class="review" id="review">
+        <h1>Review</h1>
+        <div class="row">
+          <div class="side">
+            <div>5 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-5"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>100%</div>
+          </div>
+          <div class="side">
+            <div>4 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-4"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>80%</div>
+          </div>
+          <div class="side">
+            <div>3 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-3"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>30%</div>
+          </div>
+          <div class="side">
+            <div>2 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-2"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>10%</div>
+          </div>
+          <div class="side">
+            <div>1 star</div>
+          </div>
+          <div class="middle">
+            <div class="bar-container">
+              <div class="bar-1"></div>
+            </div>
+          </div>
+          <div class="side right">
+            <div>40%</div>
+  </div>
+</div>
+    </section>
+
+    <!-- Secton review closed -->
+
+
+
+    <!-- section footer start -->
+
+    <section class="footer" id="footer">
+        <div class="f_c">
+            <p>copyright@2021. Design by <cite><b>I-Tech System</b></cite></p>
+        </div>
+
+        <div class="f_l">
+            <ul>
+                <li><a href="#"><img src="cfi/bcf.jpg" style="width: 50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="cfi/bcf.jpg" style="width: 50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="cfi/bcf.jpg" style="width: 50px; height: 50px;"></a></li>
+                <li><a href="#"><img src="cfi/bcf.jpg" style="width: 50px; height: 50px;"></a></li>
+            </ul>
+        </div>
+    </section>
+
+     <!-- section footer closed-->
+
+
+
+</body>
+</html>
